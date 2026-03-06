@@ -4,11 +4,11 @@ public class Film {
     private int czasTrwania ; // w minutach
     private String gatunek;
     
-    public Film(String tytul, int czasTrwania, String gatunek) {
+    public Film(String tytul, int czasTrwania, String gatunek) throws Exception {
         this.tytul = tytul;
-        // if (czasTrwania <= 0){
-        //     throw new Exception("Czas trwania filmu niemoe być mniejszy niz 0 minut");
-        // }
+        if (czasTrwania <= 0){
+            throw new Exception("Czas trwania filmu niemoe być mniejszy niz 0 minut");
+        }
         this.czasTrwania = czasTrwania;
         this.gatunek = gatunek;
     }

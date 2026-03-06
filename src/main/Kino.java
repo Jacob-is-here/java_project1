@@ -1,6 +1,5 @@
 package src.main;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Kino {
@@ -9,13 +8,6 @@ public class Kino {
     List<Seans> listaSeansow ;
     String nazwa ;
     
-    public Kino(String nazwa) {
-        this.nazwa = nazwa;
-        this.repertuar = new ArrayList<>();
-        this.listaSal = new ArrayList<>();
-        this.listaSeansow = new ArrayList<>();
-    }
-
     public void dodajFilmDoRepertuaru(Film film){
         if (repertuar.contains(film)) {
             System.out.println("Ten film juz istnieje!");
@@ -23,6 +15,13 @@ public class Kino {
             repertuar.add(film);
             System.out.println("Został dodany nowy film : "+film.toString());
         }
+    }
+
+    public Kino(String nazwa,List<Film> repertuar, List<Sala> listaSal, List<Seans> listaSeansow) {
+        this.repertuar = repertuar;
+        this.listaSal = listaSal;
+        this.listaSeansow = listaSeansow;
+        this.nazwa = nazwa;
     }
 
     public void zaplanujSeans(Seans seans){

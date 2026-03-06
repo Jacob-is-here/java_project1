@@ -1,21 +1,22 @@
 package src.main;
 import java.time.LocalTime;
-import java.util.HashSet;
 import java.util.Set;
 
 public class Seans {
     Film film;
     LocalTime godzinaRozpoczecia;
-    Set<Integer> zajeteMiejsca;// uzywamy set poniewaz miejsca nie moga sie powtarzac
+    Set<Integer> zajeteMiejsca ;// uzywamy set poniewaz miejsca nie moga sie powtarzac
     Sala salaKinowa;
     
-    public Seans(Film film, LocalTime godzinaRozpoczecia,Sala salaKinowa) {
+    
+    public Seans(Film film, LocalTime godzinaRozpoczecia, Set<Integer> zajeteMiejsca, Sala salaKinowa) {
         this.film = film;
         this.godzinaRozpoczecia = godzinaRozpoczecia;
-        this.zajeteMiejsca = new HashSet<>();
+        this.zajeteMiejsca = zajeteMiejsca;
         this.salaKinowa = salaKinowa;
     }
 
+    
     public void wyswietlWolneMiejsca() throws Exception{
         if (salaKinowa.getMaxLiczbaMiejsc() <= 0) {
             throw new Exception("Pojemność sali musi być wieksza niz 0"); 
